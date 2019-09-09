@@ -1,5 +1,6 @@
 aiohttp
 aiopg
+flask
 greenlet
 gevent
 twisted
