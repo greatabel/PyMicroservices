@@ -1,3 +1,4 @@
+aiohttp
 greenlet
 gevent
 twisted
