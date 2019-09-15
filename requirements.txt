@@ -1,7 +1,1 @@
-aiohttp
-aiopg
-blinker
-flask
-greenlet
-gevent
-twisted
+requests-mock
