@@ -6,5 +6,6 @@ Molotov
 nose
 pytest-flake8
 requests-mock
+tox
 WebTest
 WSGIProxy2
