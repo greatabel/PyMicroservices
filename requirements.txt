@@ -1,3 +1,4 @@
 boom
+flask_profiler
 Molotov
 requests-mock
