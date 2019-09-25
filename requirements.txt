@@ -4,3 +4,4 @@ flask-webtest
 Molotov
 requests-mock
 WebTest
+WSGIProxy2
