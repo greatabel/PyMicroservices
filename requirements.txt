@@ -1,7 +1,10 @@
 boom
+coverage
 flask_profiler
 flask-webtest
 Molotov
+nose
+pytest-flake8
 requests-mock
 WebTest
 WSGIProxy2
