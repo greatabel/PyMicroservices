@@ -1,4 +1,6 @@
 boom
 flask_profiler
+flask-webtest
 Molotov
 requests-mock
+WebTest
