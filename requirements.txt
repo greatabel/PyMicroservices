@@ -1,4 +1,5 @@
 boom
+celery
 coverage
 flask_profiler
 flask-webtest
