@@ -1,12 +1,7 @@
-import unittest
-import json
+def suma(x, y):
+    z = x + y
+    return z
 
 
-
-class TestApp(unittest.TestCase):
-    def test_help(self):
-
-        self.assertEqual('a', 'a')
-
-if __name__ == '__main__':
-    unittest.main()
+def test_suma():
+    assert suma(2, 3) == 5
