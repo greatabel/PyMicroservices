@@ -7,5 +7,6 @@ nose
 pytest-flake8
 requests-mock
 tox
+Sphinx
 WebTest
 WSGIProxy2
