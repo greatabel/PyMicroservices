@@ -1,6 +1,7 @@
 boom
 celery
 coverage
+flask_extension
 flask_profiler
 flask-webtest
 msgpack
