@@ -10,7 +10,7 @@ def message(topic, message):
         connection.close()
 
 # sending a message about race 34
-message('race.34', 'We have some results!')
+message('race', 'We have some results!')
 
 # training 12
 message('training.12', "It's time to do your long run")
