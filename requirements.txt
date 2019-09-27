@@ -3,6 +3,7 @@ celery
 coverage
 flask_profiler
 flask-webtest
+msgpack
 Molotov
 nose
 pytest-flake8
