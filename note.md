@@ -73,6 +73,10 @@ In other words, changes in the code should ideally be reflected in the tests and
 你也可以把细节通过StatsD度量，和用一个更精细的图标Graphite
 
 @
+brew install rabbitmq
+brew services start rabbitmq
+brew services stop  rabbitmq
+brew services restart rabbitmq
 
 
 

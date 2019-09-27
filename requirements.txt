@@ -6,7 +6,9 @@ flask-webtest
 msgpack
 Molotov
 nose
+pika
 pytest-flake8
+rabbitmq
 requests-mock
 tox
 Sphinx
