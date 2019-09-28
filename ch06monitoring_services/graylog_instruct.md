@@ -1,4 +1,7 @@
 最好使用docker-compose 使用我这个file，而不要用官方的：官方的太慢了
+后台启动容器并使它们运行：
+      docker-compose up
+停止： docker-compose stop
 
 http://docs.graylog.org/en/latest/pages/installation/docker.html
 
