@@ -4,6 +4,7 @@ coverage
 flask_extension
 flask_profiler
 flask-webtest
+graypy
 msgpack
 Molotov
 nose
