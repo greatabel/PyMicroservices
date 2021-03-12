@@ -1,0 +1,9 @@
+{
+  "httpMethod": "POST",
+  "body": {
+    "product": {
+      "name": "orange juice",
+      "category": "beverage"
+    }
+  }
+}

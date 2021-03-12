@@ -1,0 +1,9 @@
+{
+  "httpMethod": "GET",
+  "queryStringParameters": {
+    "product": "shrimp"
+  },
+  "pathParameters": [
+    "one"
+  ]
+}
