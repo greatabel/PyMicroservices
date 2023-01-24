@@ -1,0 +1,23 @@
+[
+    {"word1": "E-learning", "word2": "learning-system",  "freq":"8.04"},
+    {"word1": "cheap", "word2": "digital learning",  "freq":"7.44"},
+    {"word1": "learning-video", "word2": "remote-learning",  "freq":"11.76"},
+    {"word1": "cheap", "word2": "web-education",  "freq":"5.88"},
+    {"word1": "learning-video", "word2": "Java",  "freq":"6.12"},
+    {"word1": "learning-system", "word2": "learning-video",  "freq":"9.24"},
+    {"word1": "learning-video", "word2": "web development",  "freq":"9.48"},
+    {"word1": "Java", "word2": "learning-video",  "freq":"10.08"},
+    {"word1": "learning-video", "word2": "cheap",  "freq":"9.72"},
+    {"word1": "cheap", "word2": "learning-video",  "freq":"7.8"},
+    {"word1": "E-learning", "word2": "Java",  "freq":"10.1"},
+    {"word1": "cheap", "word2": "learning-video",  "freq":"10.2"},
+    {"word1": "web-education", "word2": "TUL",  "freq":"6.96"},
+    {"word1": "Java", "word2": "web-education",  "freq":"5.52"},
+    {"word1": "web-education", "word2": "PSP",  "freq":"9.48"},
+    {"word1": "Java", "word2": "Android-Programming",  "freq":"10.56"},
+    {"word1": "E-learning", "word2": "ICT",  "freq":"6.84"},
+    {"word1": "english", "word2": "E-learning",  "freq":"9.24"},
+    {"word1": "Java", "word2": "web-education",  "freq":"6.6"},
+    {"word1": "E-learning", "word2": "math",  "freq":"7.92"}
+
+]
