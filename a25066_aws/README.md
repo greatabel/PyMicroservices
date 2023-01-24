@@ -45,5 +45,11 @@ password: test
 
 7.
 个人主页： http://localhost:5000/profile
+aws :https://ec2-35-78-249-90.ap-northeast-1.compute.amazonaws.com:80/home/1
 
+8.可选
 
+aws 登陆：
+ssh -i "a25066_aws.pem" ubuntu@ec2-35-78-249-90.ap-northeast-1.compute.amazonaws.com
+tmux
+即先按下，ctrl+b，再按下d（detach）
