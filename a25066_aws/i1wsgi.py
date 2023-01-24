@@ -698,4 +698,4 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()
 
-        app.run(host="35.78.249.90", port=80, threaded=False)
+        app.run(host="172.31.4.1", port=80, threaded=False)
