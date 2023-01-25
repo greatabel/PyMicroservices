@@ -45,7 +45,7 @@ password: test
 
 7.
 个人主页： http://localhost:5000/profile
-aws :https://ec2-35-78-249-90.ap-northeast-1.compute.amazonaws.com:80/home/1
+aws : https://ec2-35-78-249-90.ap-northeast-1.compute.amazonaws.com:80/home/1
 
 8.可选
 
