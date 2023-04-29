@@ -14,6 +14,6 @@ flask-cors
 Flask-Login
 flask_sqlalchemy
 requests
-
+boto3==1.26.123
 #termcolor
 #pdfreader

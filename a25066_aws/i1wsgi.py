@@ -29,6 +29,10 @@ import logging
 
 import recommandation
 
+import boto3
+from boto3.dynamodb.conditions import Key
+
+
 # from movie.domain.model import Director, Review, Movie
 
 # from html_similarity import style_similarity, structural_similarity, similarity
@@ -67,6 +71,9 @@ db = SQLAlchemy(app)
 last_upload_filename = None
 # --- end   数据库 ---
 admin_list = ["admin@126.com", "greatabel1@126.com"]
+
+
+
 
 
 class User(db.Model):
@@ -111,34 +118,6 @@ class Blog(db.Model):
         self.text = text
 
 
-# # 老师当前布置作业的表
-# class TeacherWork(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(80), unique=True)
-#     detail = db.Column(db.String(500))
-#     answer = db.Column(db.String(5000))
-#     course_id = db.Column(db.Integer)
-
-#     def __init__(self, title, detail, answer, course_id):
-#         self.title = title
-#         self.detail = detail
-#         self.answer = answer
-#         self.course_id = course_id
-
-
-# class StudentWork(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     userid = db.Column(db.Integer)
-#     answer = db.Column(db.String(5000))
-#     score = db.Column(db.DECIMAL(10, 2))
-#     course_id = db.Column(db.Integer)
-
-#     def __init__(self, userid, answer, score, course_id):
-#         self.userid = userid
-#         self.answer = answer
-#         self.score = score
-#         self.course_id = course_id
-
 
 ### -------------start of home
 def replace_html_tag(text, word):
@@ -178,6 +157,8 @@ def home(pagenum=1):
     app.logger.info("home info log")
 
     blogs = Blog.query.all()
+    # ---start of aws
+    # blogs = get_all_blogs()
     user = None
     if "userid" in session:
         user = User.query.filter_by(id=session["userid"]).first()
@@ -188,6 +169,14 @@ def home(pagenum=1):
         search_list = []
         keyword = request.form["keyword"]
         print("keyword=", keyword, "-" * 10)
+
+        # -----start --aws
+        # search_list = []
+        # keyword = request.form["keyword"]
+        # if keyword is not None:
+        #     search_list = search_blogs(keyword)
+        # ----end of aws
+
         if keyword is not None:
             for blog in blogs:
                 if keyword in blog.title or keyword in blog.text:
@@ -200,19 +189,7 @@ def home(pagenum=1):
             if len(search_list) == 0 and keyword in ["天气", "心情"]:
                 es_content = es_search.mysearch(keyword)
                 search_list.append(es_content)
-            # for movie in notice_list:
-            #     if movie.director.director_full_name == keyword:
-            #         search_list.append(movie)
 
-            #     for actor in movie.actors:
-            #         if actor.actor_full_name == keyword:
-            #             search_list.append(movie)
-            #             break
-
-            #     for gene in movie.genres:
-            #         if gene.genre_name == keyword:
-            #             search_list.append(movie)
-            #             break
         print("search_list=", search_list, "=>" * 5)
         return rt(
             "home.html",
@@ -223,6 +200,36 @@ def home(pagenum=1):
         # return rt("home.html", listing=PageResult(search_list, pagenum, 2), user=user)
 
     return rt("home.html", listing=PageResult(blogs, pagenum), user=user)
+
+# --------  start of aws --------
+
+s3_client = boto3.client("s3")
+dynamodb = boto3.resource("dynamodb", region_name="ap-northeast-1")
+
+table = dynamodb.Table("my_dynamodb_table_blogs")
+
+def get_all_blogs():
+    response = table.scan()
+    blogs = response["Items"]
+    return blogs
+
+
+def search_blogs(keyword):
+    response = table.scan(
+        FilterExpression=Key("title").contains(keyword) | Key("text").contains(keyword)
+    )
+    return response["Items"]
+
+
+def upload_image_to_s3(image):
+    s3_client.upload_fileobj(image, "s3-bucket-policy-template", image.filename, ExtraArgs={"ACL": "public-read", "ContentType": image.content_type})
+    return f"https://s3-bucket-policy-template.s3.amazonaws.com/{image.filename}"
+
+def get_image_url_from_s3(image_name):
+    return f"https://s3-bucket-policy-template.s3.amazonaws.com/{image_name}"
+
+
+# --------  end of aws --------
 
 
 @app.route("/blogs/create", methods=["GET", "POST"])
