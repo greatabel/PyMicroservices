@@ -28,3 +28,34 @@ if your application needs to distribute content such as images, videos, and othe
 On the other hand, if your application needs to expose a set of APIs to be consumed by other systems, then you should consider using API Gateway. API Gateway allows you to create, publish, and manage APIs in a secure and scalable manner. It also provides features such as authentication, access control, monitoring, and version management.
 
 In future implementations, the choice between the two will depend on the specific use case and requirements of the application. CloudFront should be used when the application needs to distribute content with low latency and high transfer speeds. API Gateway should be used when the application needs to create, publish, and manage APIs. Both services can be integrated together.
+
+
+3.
+
+演讲：
+Title: Leveraging AWS Services for a Malaysia Automotive Industry Blog Platform
+
+Introduction:
+Ladies and gentlemen, today I am excited to present to you how we have utilized Amazon Web Services (AWS) to enhance our blog platform, which primarily focuses on the automotive industry in Malaysia. Our platform serves as a vertical information hub to provide insights, news, and analysis related to the Malaysian automotive sector.
+
+Slide 1: AWS Services Overview
+In our journey to improve our platform's performance and reliability, we have integrated several AWS services, with a primary focus on Amazon S3 and DynamoDB. We have also made use of AWS CloudWatch and X-Ray for monitoring and analyzing our application's performance.
+
+Slide 2: Amazon S3 Integration
+Amazon Simple Storage Service (S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. We use S3 to store and manage all the images associated with our blog posts. By hosting our images on S3, we can ensure high availability, redundancy, and fast content delivery, resulting in an enhanced user experience on our platform.
+
+Slide 3: Amazon DynamoDB Integration
+Amazon DynamoDB is a managed NoSQL database service that provides fast and predictable performance with seamless scalability. We have replaced our previous database solution with DynamoDB to store all our blog data, including titles, text, and associated metadata. With DynamoDB's low-latency, auto-scaling capabilities, and high availability, we can serve our growing audience efficiently, regardless of the volume of requests or data.
+
+Slide 4: AWS CloudWatch and X-Ray for Monitoring and Analysis
+As our platform continues to grow, it becomes essential to monitor and analyze its performance. AWS CloudWatch and X-Ray services allow us to do just that. CloudWatch helps us collect metrics, logs, and alarms for our AWS resources, while X-Ray provides insights into the request tracing of our distributed application.
+
+Slide 5: Latency Testing and Performance Analysis
+With the help of CloudWatch and X-Ray, we continuously monitor the latency of our /home route and analyze its performance. By identifying bottlenecks and implementing optimization strategies like caching, pagination, and database indexing, we can ensure that our platform remains fast and responsive, providing a seamless browsing experience for our users.
+
+Conclusion:
+In conclusion, by integrating Amazon S3, DynamoDB, CloudWatch, and X-Ray into our blog platform, we have successfully created a more robust, efficient, and scalable information hub for the Malaysian automotive industry. These AWS services have allowed us to enhance our user experience, improve performance, and ensure that our platform can adapt and grow with the ever-changing automotive landscape in Malaysia. Thank you for your attention.
+
+
+
+
