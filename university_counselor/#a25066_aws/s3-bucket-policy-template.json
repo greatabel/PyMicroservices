@@ -1,0 +1,15 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1614653292114",
+    "Statement": [
+        {
+            "Sid": "Stmt1614653286162",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": ["arn:aws:iam::192072613363:root"]
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::desu-jiaruizhong-shopping-list-app"
+        }
+    ]
+}
